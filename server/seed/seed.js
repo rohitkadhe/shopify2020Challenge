@@ -1,4 +1,4 @@
-require('../config/env');
+require('dotenv').config();
 let db = require('../db/db');
 
 const createUsersTable = async () => {

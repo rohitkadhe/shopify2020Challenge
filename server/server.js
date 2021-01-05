@@ -28,16 +28,16 @@ app.all('*', (req, res, next) => {
 
 app.use((err, req, res, next) => {
   let error = '';
-  console.log(err);
-  if (err.message && err.status) {
-    error = { status: err.status, message: err.message };
+  // console.log(err);
+  if (err.message && err.statusCode) {
+    error = { message: err.message, statusCode: err.statusCode };
   } else {
     error = {};
-    error.status = 500;
     error.message = 'Internal Server Error';
+    error.statusCode = 500;
   }
 
-  res.status(error.status).json(error);
+  res.status(error.statusCode).json(error);
 });
 app.listen(process.env.PORT || 5433, () =>
   console.log(`Started listening on ${process.env.PORT || 3030}`),

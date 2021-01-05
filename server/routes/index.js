@@ -10,6 +10,9 @@ router.get('/', (req, res) => {
 
 router.post('/register', AuthController.registerUser);
 router.post('/login', AuthController.loginUser);
+router.get('/images', ImageRepoController.getPublicImages);
+router.get('/users/:user_id/images', auth, ImageRepoController.getUserImages);
 router.post('/images/upload', auth, ImageRepoController.uploadImages);
+router.delete('/users/:user_id/images', auth, ImageRepoController.deleteUserImages);
 
 module.exports = router;

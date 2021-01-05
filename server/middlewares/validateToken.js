@@ -13,7 +13,7 @@ const validateToken = (req, res, next) => {
     next();
   } catch (err) {
     req.user = '';
-    next({ message: 'Unauthorized', status: HttpErrors.UNAUTHORIZED });
+    next({ message: 'Unauthorized', statusCode: HttpErrors.UNAUTHORIZED });
   }
 };
 

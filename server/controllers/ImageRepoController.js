@@ -1,3 +1,4 @@
+const { UNAUTHORIZED } = require('../errors/HttpErrors');
 const ImageService = require('../services/ImageService');
 
 const uploadImages = async (req, res, next) => {
@@ -10,11 +11,49 @@ const uploadImages = async (req, res, next) => {
 
     res.json(images);
   } catch (err) {
-    console.log(err);
+    next(err);
+  }
+};
+
+const getPublicImages = async (req, res, next) => {
+  try {
+    let images = await ImageService.getPublicImages();
+    res.json(images);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const getUserImages = async (req, res, next) => {
+  try {
+    if (parseInt(req.params.user_id) !== parseInt(req.user.id))
+      return next({ message: 'Unauthorized', statusCode: UNAUTHORIZED });
+    const user_id = req.params.user_id;
+    const visibility = req.query.visibility != null ? req.query.visibility : '';
+    let images = await ImageService.getUserImages(user_id, visibility);
+    res.json(images);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const deleteUserImages = async (req, res, next) => {
+  try {
+    if (parseInt(req.params.user_id) !== parseInt(req.user.id))
+      return next({ message: 'Unauthorized', statusCode: UNAUTHORIZED });
+
+    const user_id = req.params.user_id;
+    const imagePublicIds = req.body.imagePublicIds;
+    let images = await ImageService.deleteUserImages(user_id, imagePublicIds);
+    res.json(images);
+  } catch (err) {
     next(err);
   }
 };
 
 module.exports = {
   uploadImages,
+  getPublicImages,
+  getUserImages,
+  deleteUserImages,
 };
