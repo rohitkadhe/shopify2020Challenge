@@ -10,7 +10,7 @@ export default function NavBar({ history }) {
   let authString = isAuthenticated ? 'Logout' : 'Login';
 
   return (
-    <Menu pointing secondary style={{ margin: '2px' }} color="teal">
+    <Menu pointing secondary style={{ margin: '1em' }} color="teal">
       <Menu.Item header>Sort By</Menu.Item>
       <Menu.Item
         name="All Images"

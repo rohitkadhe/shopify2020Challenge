@@ -34,7 +34,7 @@ export default function AuthForm({ type, history }) {
       let body = { email, password };
       resp = await ax.post('/login', body);
     }
-    LocalStorageService.save('user', resp.data.user);
+    LocalStorageService.save('user', resp.data);
     history.push('/images');
   };
   const handleNameChange = (e) => {
