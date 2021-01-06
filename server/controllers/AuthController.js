@@ -5,11 +5,8 @@ const Time = require('../constants/time');
 const AuthErrors = require('../errors/AuthErrors');
 const { BAD_REQUEST } = require('../errors/HttpErrors');
 const { ACCOUNT_EXISTS, INVALID_FIELDS, INVALID_CREDENTIALS } = AuthErrors;
-const seed = require('../seed/seed');
 
 const registerUser = async (req, res, next) => {
-  // await seed.createUsersTable();
-  // await seed.createImagesTable();
   const { name, email, password } = req.body;
   try {
     let validReq = AuthService.validateRegisterRequestDat(name, email, password);

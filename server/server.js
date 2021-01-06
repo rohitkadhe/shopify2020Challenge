@@ -5,13 +5,13 @@ const app = express();
 const spotifyRoutes = require('./routes/index');
 const HttpErrors = require('./errors/HttpErrors');
 const formData = require('express-form-data');
+
 require('dotenv').config();
 
 //Body parser
 app.use(express.json());
 app.use(morgan('combined'));
 app.use(cors());
-
 //Parsing file upload data
 app.use(formData.parse());
 
