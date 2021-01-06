@@ -28,7 +28,7 @@
 # Client Application
 
 - Open a terminal window in the client directory and run 'npm i' followed by 'npm start'
-- A browser window should open if not navigate to the url in the terminal to see the UI
+- A browser window should open if not navigate to the url in the terminal to view the UI
 
 # Server Application
 
