@@ -20,7 +20,7 @@ const addImagesToDb = async (imageData, imageUploadRes, user) => {
       imageUploadRes[index].public_id,
       user.id,
       imageUploadRes[index].secure_url,
-      dat.visibility,
+      dat.visibility.toLowerCase(),
     );
   });
 
@@ -57,6 +57,15 @@ const deleteUserImages = async (user_id, imagePublicIds) => {
     imagePublicIds.map(async (imagePublicId) => {
       let res = await db('images')
         .select('public_id')
+        .where('user_id', user_id)
+        .where('public_id', imagePublicId);
+      return res[0];
+    }),
+  );
+  await Promise.all(
+    imagePublicIds.map(async (imagePublicId) => {
+      let res = await db('images')
+        .delete()
         .where('user_id', user_id)
         .where('public_id', imagePublicId);
       return res[0];

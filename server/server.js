@@ -28,7 +28,6 @@ app.all('*', (req, res, next) => {
 
 app.use((err, req, res, next) => {
   let error = '';
-  // console.log(err);
   if (err.message && err.statusCode) {
     error = { message: err.message, statusCode: err.statusCode };
   } else {

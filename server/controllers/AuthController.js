@@ -5,8 +5,11 @@ const Time = require('../constants/time');
 const AuthErrors = require('../errors/AuthErrors');
 const { BAD_REQUEST } = require('../errors/HttpErrors');
 const { ACCOUNT_EXISTS, INVALID_FIELDS, INVALID_CREDENTIALS } = AuthErrors;
+const seed = require('../seed/seed');
 
 const registerUser = async (req, res, next) => {
+  // await seed.createUsersTable();
+  // await seed.createImagesTable();
   const { name, email, password } = req.body;
   try {
     let validReq = AuthService.validateRegisterRequestDat(name, email, password);
@@ -46,10 +49,7 @@ const loginUser = async (req, res, next) => {
       { expiresIn: Time.ONE_HOUR },
     );
 
-    res.json({
-      user: new User(user[0].email, user[0].name, undefined, user[0].id),
-      token,
-    });
+    res.json({ id: user[0].id, name: user[0].name, email: user[0].email, token });
   } catch (err) {
     next(err);
   }
