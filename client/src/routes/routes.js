@@ -6,11 +6,13 @@ import {
   registerRoute,
   userImagesRoute,
   uploadImagesRoute,
+  userDeleteImagesRoute,
 } from '../constants/strings';
 import AuthForm from '../components/auth/AuthForm';
 import ImageGallery from '../components/ImageGallery/ImageGallery';
 import AuthService from '../services/AuthService';
 import ImageUpload from '../components/ImageUpload/ImageUpload';
+import ImageDelete from '../components/ImageDelete/ImageDelete';
 
 export default function Routes() {
   return (
@@ -27,6 +29,11 @@ export default function Routes() {
         )}
       />
       <Route exact path={uploadImagesRoute} component={(props) => <ImageUpload {...props} />} />
+      <Route
+        exact
+        path={userDeleteImagesRoute(':user_id')}
+        component={(props) => <ImageDelete {...props} />}
+      />
       <Route
         exact
         path={userImagesRoute(':user_id')}

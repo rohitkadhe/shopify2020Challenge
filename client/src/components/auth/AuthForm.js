@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form, Grid, Message, Segment, Header } from 'semantic-ui-react';
 import ax from '../../axios/axios';
 import LocalStorageService from '../../services/LocalStorageService';
+import { registerRoute } from '../../constants/strings';
 
 export default function AuthForm({ type, history }) {
   const [name, setName] = useState('');
@@ -89,7 +90,7 @@ export default function AuthForm({ type, history }) {
         <Message>
           <Message.Header>Not yet registered?</Message.Header>
           <br></br>
-          <Button fluid onClick={() => history.push('/register')}>
+          <Button fluid onClick={() => history.push(registerRoute)}>
             Register
           </Button>
         </Message>

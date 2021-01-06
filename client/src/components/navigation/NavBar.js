@@ -13,9 +13,10 @@ export default function NavBar({ history }) {
 
   let isAuthenticated = AuthService.isAuthenticated();
   let authString = isAuthenticated ? 'Logout' : 'Login';
-
+  let userName = AuthService.getUser() !== null ? `Hello ${AuthService.getUser().name}` : '';
   return (
     <Menu pointing secondary style={{ margin: '1em' }} color="teal">
+      <Menu.Item header>{userName}</Menu.Item>
       <Menu.Item header>Sort By</Menu.Item>
       <Menu.Item
         name="All Images"
@@ -38,7 +39,9 @@ export default function NavBar({ history }) {
 
       <Grid container verticalAlign="middle" centered>
         <Grid.Row>
-          <Menu.Item header>Shopify Image Repository</Menu.Item>
+          <Menu.Item header style={{ fontSize: 'large' }}>
+            Shopify Image Repository
+          </Menu.Item>
         </Grid.Row>
       </Grid>
 

@@ -1,6 +1,11 @@
 import ax from '../axios/axios';
 import AuthService from './AuthService';
-import { userImagesRoute, getAllImagesRoute, uploadImagesRoute } from '../constants/strings';
+import {
+  userImagesRoute,
+  getAllImagesRoute,
+  uploadImagesRoute,
+  SERVER_BASE_URL,
+} from '../constants/strings';
 
 class ImageGalleryService {
   async getUserImages() {
@@ -26,7 +31,21 @@ class ImageGalleryService {
     return resp;
   }
 
-  deleteUserImages(images) {}
+  async deleteUserImages(publicImageIds) {
+    let user = AuthService.getUser();
+    let dat = {
+      publicImageIds,
+    };
+
+    let uri = userImagesRoute(user.id);
+    const resp = await ax({
+      url: `${SERVER_BASE_URL}${uri}`,
+      data: dat,
+      method: 'delete',
+      headers: { Authorization: `Bearer ${user.token}` },
+    });
+    return resp;
+  }
 }
 
 export default new ImageGalleryService();

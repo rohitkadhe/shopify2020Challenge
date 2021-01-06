@@ -24,9 +24,11 @@ export default function ImageUpload() {
     await ImageGalleryService.uploadImages(formData);
     setUploading(false);
   }
+
   const onRadioClick = (e, { value }) => {
     setVisibility(value);
   };
+
   const renderUploadContainer = () => {
     if (uploading) {
       return <ImageRepoLoader visible={uploading} />;

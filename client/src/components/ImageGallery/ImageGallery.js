@@ -8,10 +8,8 @@ export default class ImageGallery extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      uploading: false,
       fetching: false,
       images: [],
-      isAuthenticated: this.props.isAuthenticated,
     };
   }
   renderImages() {
@@ -20,6 +18,7 @@ export default class ImageGallery extends Component {
         <Grid.Row columns={6}>
           {this.state.images.map((image) => {
             let date = new Date(image.uploaded_on);
+
             return (
               <Grid.Column key={image.public_id} style={{ marginBottom: '1em' }}>
                 <ImageCard
