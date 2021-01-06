@@ -33,12 +33,12 @@
 # Server Application
 
 - Ensure you have PostgreSQL installed on your machine - https://www.postgresql.org/download/
-- When setting up the user during the PostgreSQL installation set your password as root otherwise change the password field in the seed.js file located in the root directory to match your password and replace 'root' in the DATABASE_URL in the .env file located in the root directory with your password. So if my password was test the DATABASE_URL would become postgres://postgres:test@127.0.0.1/shopifyimagerepository
+- When setting up the user during the PostgreSQL installation set your password as root otherwise change the password field in the conn object in the seed.js file located in the root directory to match your password and replace 'root' in the DATABASE_URL in the .env file located in the root directory with your password. So if my password was test the DATABASE_URL would become postgres://postgres:test@127.0.0.1/shopifyimagerepository
 - Leave all other settings as per their defaults
 - <b>Important Note: </b> Make the changes in the previous two steps carefully or the project will not run
-- Finally open a terminal window in the server directory and first run the command 'node seed.js' followed by 'npm run dev'
+- Finally open a terminal window in the server directory and first run the command 'npm i' then 'node seed.js' and finally 'npm run dev'
 
-- Thats it! The server and client should both be running
+- Thats it! The server and client should both be running and there should be no images in the repository initially 
 
 # Limitations and Improvements
 
