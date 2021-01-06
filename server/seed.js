@@ -35,25 +35,3 @@ knex.raw('CREATE DATABASE shopifyimagerepository').then(function () {
       knex.destroy();
     });
 });
-//       .then(function () {
-//         console.log('Created Users Table');
-//         db.schema
-//           .createTable('images', (table) => {
-//             table.string('public_id').primary();
-//             table.string('user_id').notNullable();
-//             table.string('name').notNullable();
-//             table.string('secure_url').notNullable();
-//             table.string('visibility').notNullable();
-//             table.timestamp('uploaded_on').defaultTo(db.fn.now());
-//           })
-//           .then(function () {
-//             console.log('Created Images Table');
-//           })
-//           .then(function () {
-//             knex.destroy();
-//           });
-//       });
-//   });
-// };
-
-// createDb();

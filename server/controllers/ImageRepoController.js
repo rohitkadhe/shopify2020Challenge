@@ -28,6 +28,7 @@ const getUserImages = async (req, res, next) => {
   try {
     if (parseInt(req.params.user_id) !== parseInt(req.user.id))
       return next({ message: 'Unauthorized', statusCode: UNAUTHORIZED });
+
     const user_id = req.params.user_id;
     const visibility = req.query.visibility != null ? req.query.visibility : '';
     let images = await ImageService.getUserImages(user_id, visibility);

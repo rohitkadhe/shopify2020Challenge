@@ -23,7 +23,7 @@ const registerUser = async (req, res, next) => {
       { id: savedUser[0].id, name: savedUser[0].name, email: savedUser[0].email },
       { expiresIn: Time.ONE_HOUR },
     );
-    res.json({ user: savedUser[0], token });
+    res.json({ id: savedUser[0].id, name: savedUser[0].name, email: savedUser[0].email, token });
   } catch (err) {
     next(err);
   }
