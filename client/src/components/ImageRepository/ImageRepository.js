@@ -20,7 +20,7 @@ export default class ImageRepository extends Component {
             let date = new Date(image.uploaded_on);
 
             return (
-              <Grid.Column key={image.public_id} style={{ marginBottom: '1em' }}>
+              <Grid.Column key={image.public_id}>
                 <ImageCard
                   name={image.name}
                   visibility={image.visibility}

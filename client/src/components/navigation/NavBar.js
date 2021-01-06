@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, Grid } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 import AuthService from '../../services/AuthService';
 import {
   homeRoute,
@@ -15,35 +15,32 @@ export default function NavBar({ history }) {
   let authString = isAuthenticated ? 'Logout' : 'Login';
   let userName = AuthService.getUser() !== null ? `Hello ${AuthService.getUser().name}` : '';
   return (
-    <Menu pointing secondary style={{ margin: '1em' }} color="teal">
-      <Menu.Item header>{userName}</Menu.Item>
-      <Menu.Item header>Sort By</Menu.Item>
-      <Menu.Item
-        name="All Images"
-        active={activeItem === 'All Images'}
-        onClick={() => {
-          history.push(homeRoute);
-          setActiveItem('All Images');
-        }}
-      />
+    <Menu pointing fluid stackable={true} secondary color="teal">
+      <Menu.Item header>Shopify Image Repository</Menu.Item>
+      <Menu.Item header>
+        <div style={{ color: '#00b5ad' }}>{userName}</div>
+      </Menu.Item>
+      <Menu.Menu position="right">
+        <Menu.Item header>Sort By</Menu.Item>
+        <Menu.Item
+          name="All Images"
+          active={activeItem === 'All Images'}
+          onClick={() => {
+            history.push(homeRoute);
+            setActiveItem('All Images');
+          }}
+        />
 
-      <Menu.Item
-        name="All My Images"
-        active={isAuthenticated && activeItem === 'All My Images'}
-        onClick={() => {
-          history.push(userImagesRoute(AuthService.getUser().id));
-          setActiveItem('All My Images');
-        }}
-        disabled={!AuthService.isAuthenticated()}
-      />
-
-      <Grid container verticalAlign="middle" centered>
-        <Grid.Row>
-          <Menu.Item header style={{ fontSize: 'large' }}>
-            Shopify Image Repository
-          </Menu.Item>
-        </Grid.Row>
-      </Grid>
+        <Menu.Item
+          name="All My Images"
+          active={isAuthenticated && activeItem === 'All My Images'}
+          onClick={() => {
+            history.push(userImagesRoute(AuthService.getUser().id));
+            setActiveItem('All My Images');
+          }}
+          disabled={!AuthService.isAuthenticated()}
+        />
+      </Menu.Menu>
 
       <Menu.Menu position="right">
         <Menu.Item
