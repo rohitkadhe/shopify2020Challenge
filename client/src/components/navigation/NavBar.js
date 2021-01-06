@@ -13,7 +13,7 @@ export default function NavBar({ history }) {
 
   let isAuthenticated = AuthService.isAuthenticated();
   let authString = isAuthenticated ? 'Logout' : 'Login';
-  let userName = AuthService.getUser() !== null ? `Hello ${AuthService.getUser().name}` : '';
+  let userName = AuthService.getUser() !== null ? `Hello,   ${AuthService.getUser().name}` : '';
   return (
     <Menu pointing fluid stackable={true} secondary color="teal">
       <Menu.Item header>Shopify Image Repository</Menu.Item>
