@@ -1,9 +1,16 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { homeRoute, loginRoute, registerRoute, userImagesRoute } from '../constants/strings';
+import {
+  homeRoute,
+  loginRoute,
+  registerRoute,
+  userImagesRoute,
+  uploadImagesRoute,
+} from '../constants/strings';
 import AuthForm from '../components/auth/AuthForm';
 import ImageGallery from '../components/ImageGallery/ImageGallery';
 import AuthService from '../services/AuthService';
+import ImageUpload from '../components/ImageUpload/ImageUpload';
 
 export default function Routes() {
   return (
@@ -19,6 +26,7 @@ export default function Routes() {
           />
         )}
       />
+      <Route exact path={uploadImagesRoute} component={(props) => <ImageUpload {...props} />} />
       <Route
         exact
         path={userImagesRoute(':user_id')}

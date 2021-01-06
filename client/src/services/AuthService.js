@@ -1,12 +1,12 @@
 import LocalStorageService from './LocalStorageService';
-
+import { homeRoute, loginRoute } from '../constants/strings';
 class AuthService {
   authRouteHandler(history) {
     if (this.isAuthenticated()) {
       LocalStorageService.delete('user');
-      history.push('/images');
+      history.push(homeRoute);
     } else {
-      history.push('/login');
+      history.push(loginRoute);
     }
   }
 

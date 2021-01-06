@@ -21,7 +21,7 @@ export default class ImageGallery extends Component {
           {this.state.images.map((image) => {
             let date = new Date(image.uploaded_on);
             return (
-              <Grid.Column key={image.public_id}>
+              <Grid.Column key={image.public_id} style={{ marginBottom: '1em' }}>
                 <ImageCard
                   name={image.name}
                   visibility={image.visibility}
@@ -59,7 +59,7 @@ export default class ImageGallery extends Component {
     const { fetching } = this.state;
 
     return (
-      <div>
+      <div style={{ margin: '1em' }}>
         {this.renderImages()}
         <ImageRepoLoader visible={fetching} />
       </div>

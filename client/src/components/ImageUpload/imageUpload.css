@@ -1,0 +1,11 @@
+input[type='file'] {
+  display: none;
+}
+.files {
+  background-color: teal;
+  border-radius: 4rem;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 12px 24px;
+}

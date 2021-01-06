@@ -10,7 +10,8 @@ const userImagesRoute = (user_id) => `/users/${user_id}/images`;
 const homeRoute = '/images';
 const loginRoute = '/login';
 const registerRoute = '/register';
-
+const uploadImagesRoute = '/images/upload';
+const userDeleteImagesRoute = (user_id) => `/users/${user_id}/images/delete`;
 //Routes Back End
 const getAllImagesRoute = '/images';
 
@@ -21,4 +22,6 @@ export {
   loginRoute,
   registerRoute,
   userImagesRoute,
+  uploadImagesRoute,
+  userDeleteImagesRoute,
 };

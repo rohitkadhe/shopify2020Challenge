@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { Menu, Grid } from 'semantic-ui-react';
 import AuthService from '../../services/AuthService';
-import { homeRoute, userImagesRoute } from '../../constants/strings';
+import {
+  homeRoute,
+  userImagesRoute,
+  uploadImagesRoute,
+  userDeleteImagesRoute,
+} from '../../constants/strings';
 
 export default function NavBar({ history }) {
   const [activeItem, setActiveItem] = useState('All Images');
@@ -30,6 +35,7 @@ export default function NavBar({ history }) {
         }}
         disabled={!AuthService.isAuthenticated()}
       />
+
       <Grid container verticalAlign="middle" centered>
         <Grid.Row>
           <Menu.Item header>Shopify Image Repository</Menu.Item>
@@ -37,6 +43,25 @@ export default function NavBar({ history }) {
       </Grid>
 
       <Menu.Menu position="right">
+        <Menu.Item
+          name="Upload Images"
+          active={isAuthenticated && activeItem === 'Upload Images'}
+          onClick={() => {
+            history.push(uploadImagesRoute);
+            setActiveItem('Upload Images');
+          }}
+          disabled={!AuthService.isAuthenticated()}
+        />
+
+        <Menu.Item
+          name="Delete Images"
+          active={isAuthenticated && activeItem === 'Delete Images'}
+          onClick={() => {
+            history.push(userDeleteImagesRoute(AuthService.getUser().id));
+            setActiveItem('Delete Images');
+          }}
+          disabled={!AuthService.isAuthenticated()}
+        />
         <Menu.Item
           name={authString}
           active={activeItem === authString}
