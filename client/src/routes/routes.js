@@ -9,7 +9,7 @@ import {
   userDeleteImagesRoute,
 } from '../constants/strings';
 import AuthForm from '../components/auth/AuthForm';
-import ImageGallery from '../components/ImageGallery/ImageGallery';
+import ImageRepository from '../components/ImageRepository/ImageRepository';
 import AuthService from '../services/AuthService';
 import ImageUpload from '../components/ImageUpload/ImageUpload';
 import ImageDelete from '../components/ImageDelete/ImageDelete';
@@ -21,7 +21,7 @@ export default function Routes() {
         exact
         path={homeRoute}
         component={(props) => (
-          <ImageGallery
+          <ImageRepository
             {...props}
             isAuthenticated={AuthService.isAuthenticated()}
             fetchType={'publicImages'}
@@ -38,7 +38,7 @@ export default function Routes() {
         exact
         path={userImagesRoute(':user_id')}
         component={(props) => (
-          <ImageGallery
+          <ImageRepository
             {...props}
             isAuthenticated={AuthService.isAuthenticated()}
             fetchType={'userImages'}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Header, Icon, Segment, Container, Radio } from 'semantic-ui-react';
-import ImageGalleryService from '../../services/ImageGalleryService';
+import ImageRepositoryService from '../../services/ImageRepositoryService';
 import ImageRepoLoader from '../loader/ImageRepoLoader';
 import './imageUpload.css';
 
@@ -21,7 +21,7 @@ export default function ImageUpload() {
       formData.append(index, JSON.stringify(imageDat));
     });
 
-    await ImageGalleryService.uploadImages(formData);
+    await ImageRepositoryService.uploadImages(formData);
     setUploading(false);
   }
 

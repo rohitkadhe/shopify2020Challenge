@@ -7,13 +7,14 @@ import {
   SERVER_BASE_URL,
 } from '../constants/strings';
 
-class ImageGalleryService {
+class ImageRepositoryService {
   async getUserImages() {
     let user = AuthService.getUser();
     let auth = {
       headers: { Authorization: `Bearer ${user.token}` },
     };
-    let resp = await ax.get(userImagesRoute(user.id), auth);
+    let uri = userImagesRoute(user.id);
+    let resp = await ax.get(uri, auth);
     return resp.data;
   }
 
@@ -48,4 +49,4 @@ class ImageGalleryService {
   }
 }
 
-export default new ImageGalleryService();
+export default new ImageRepositoryService();

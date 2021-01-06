@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ImageRepoLoader from '../loader/ImageRepoLoader';
 import ImageCard from '../ImageCard/ImageCard';
 import { Grid, Button } from 'semantic-ui-react';
-import ImageGalleryService from '../../services/ImageGalleryService';
+import ImageRepositoryService from '../../services/ImageRepositoryService';
 
 export default class ImageDelete extends Component {
   constructor(props) {
@@ -15,14 +15,14 @@ export default class ImageDelete extends Component {
   handleImageDelete = async (public_id) => {
     let filtered = this.state.images.slice(0).filter((image) => image.public_id !== public_id);
     this.setState({ deleting: true });
-    await ImageGalleryService.deleteUserImages([public_id]);
+    await ImageRepositoryService.deleteUserImages([public_id]);
     this.setState({ images: filtered, deleting: false });
   };
 
   handleDeleteAllImages = async () => {
     let publicIds = this.state.images.map((image) => image.public_id);
     this.setState({ deleting: true });
-    await ImageGalleryService.deleteUserImages(publicIds);
+    await ImageRepositoryService.deleteUserImages(publicIds);
     this.setState({ images: [], deleting: false });
   };
 
@@ -64,7 +64,7 @@ export default class ImageDelete extends Component {
 
   async componentDidMount() {
     this.setState({ fetching: true });
-    let images = await ImageGalleryService.getUserImages();
+    let images = await ImageRepositoryService.getUserImages();
     this.setState({ images, fetching: false });
   }
   render() {

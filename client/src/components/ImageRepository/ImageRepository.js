@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import ImageRepoLoader from '../loader/ImageRepoLoader';
 import ImageCard from '../ImageCard/ImageCard';
 import { Grid } from 'semantic-ui-react';
-import ImageGalleryService from '../../services/ImageGalleryService';
+import ImageRepositoryService from '../../services/ImageRepositoryService';
 
-export default class ImageGallery extends Component {
+export default class ImageRepository extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,15 +41,15 @@ export default class ImageGallery extends Component {
     let images = [];
     switch (this.props.fetchType) {
       case 'publicImages':
-        images = await ImageGalleryService.getPublicImages();
+        images = await ImageRepositoryService.getPublicImages();
         this.setState({ images, fetching: false });
         break;
       case 'userImages':
-        images = await ImageGalleryService.getUserImages();
+        images = await ImageRepositoryService.getUserImages();
         this.setState({ images, fetching: false });
         break;
       default:
-        images = await ImageGalleryService.getPublicImages();
+        images = await ImageRepositoryService.getPublicImages();
         this.setState({ images, fetching: false });
         break;
     }
