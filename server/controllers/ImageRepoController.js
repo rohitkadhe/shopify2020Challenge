@@ -39,12 +39,12 @@ const getUserImages = async (req, res, next) => {
 
 const deleteUserImages = async (req, res, next) => {
   try {
-    if (parseInt(req.params.user_id) !== parseInt(req.user.id))
+    if (parseInt(req.params.user_id) !== parseInt(req.user.id)) {
       return next({ message: 'Unauthorized', statusCode: UNAUTHORIZED });
-
+    }
     const user_id = req.params.user_id;
-    const imagePublicIds = req.body.imagePublicIds;
-    let images = await ImageService.deleteUserImages(user_id, imagePublicIds);
+    const publicImageIds = req.body.publicImageIds;
+    let images = await ImageService.deleteUserImages(user_id, publicImageIds);
     res.json(images);
   } catch (err) {
     next(err);

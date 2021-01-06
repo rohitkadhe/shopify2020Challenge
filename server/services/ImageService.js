@@ -52,22 +52,22 @@ const getUserImages = async (user_id, visibility) => {
   return images;
 };
 
-const deleteUserImages = async (user_id, imagePublicIds) => {
+const deleteUserImages = async (user_id, publicImageIds) => {
   let imageIdObjs = await Promise.all(
-    imagePublicIds.map(async (imagePublicId) => {
+    publicImageIds.map(async (publicImageId) => {
       let res = await db('images')
         .select('public_id')
         .where('user_id', user_id)
-        .where('public_id', imagePublicId);
+        .where('public_id', publicImageId);
       return res[0];
     }),
   );
   await Promise.all(
-    imagePublicIds.map(async (imagePublicId) => {
+    publicImageIds.map(async (publicImageId) => {
       let res = await db('images')
         .delete()
         .where('user_id', user_id)
-        .where('public_id', imagePublicId);
+        .where('public_id', publicImageId);
       return res[0];
     }),
   );

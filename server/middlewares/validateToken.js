@@ -2,9 +2,8 @@ const AuthService = require('../services/AuthService');
 const HttpErrors = require('../errors/HttpErrors');
 
 const validateToken = (req, res, next) => {
-  authorization_header = req.headers.authorization;
   try {
-    const headerContents = authorization_header.split(' '); // Bearer {token}
+    const headerContents = req.headers.authorization.split(' '); // Bearer {token}
     const token = headerContents[1];
     let res = AuthService.validateToken(token);
     if (res === undefined) throw Error();
