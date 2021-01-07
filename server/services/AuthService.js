@@ -9,7 +9,7 @@ const validEmail = (email) => {
 };
 
 const validPassword = (password) => {
-  if (password === undefined || password.length < 8 || password === '') {
+  if (password === undefined || password === '') {
     return false;
   }
   return true;
