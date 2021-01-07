@@ -1,7 +1,7 @@
 # Shopify 2021 Challenge - Image Repository
 
-- <b>Screenshots:</b> https://drive.google.com/drive/folders/1waBAxUTJMW7XZJCY5_NWv2mzVinutY4-?usp=sharing
-- https://docs.google.com/document/d/1ZKRywXQLZWOqVOHC4JkF3LqdpO3Llpfk_CkZPR8bjak/edit
+- <b>Screenshots</b>    https://drive.google.com/drive/folders/1waBAxUTJMW7XZJCY5_NWv2mzVinutY4-?usp=sharing
+- <b>Challenge Link</b> https://docs.google.com/document/d/1ZKRywXQLZWOqVOHC4JkF3LqdpO3Llpfk_CkZPR8bjak/edit
 
 # Project Overview
 
