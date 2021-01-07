@@ -1,9 +1,9 @@
 module.exports = [
   {
     name: 'Image 1',
-    public_id: 'ShopifyImageRepo/holfqncw5mw99i9lj17j',
+    public_id: 'ShopifyImageRepo/mj8dahuqmak3keve80bk',
     secure_url:
-      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609986764/ShopifyImageRepo/holfqncw5mw99i9lj17j.jpg',
+      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609999367/ShopifyImageRepo/mj8dahuqmak3keve80bk.jpg',
     uploaded_on: '2021-01-07T02:32:54.112Z',
     user_id: '1',
     visibility: 'public',
@@ -11,9 +11,9 @@ module.exports = [
 
   {
     name: 'Image 2',
-    public_id: 'ShopifyImageRepo/t6rmgnot9prowkqirky2',
+    public_id: 'ShopifyImageRepo/lojcrkibjg9mrq7smpmr',
     secure_url:
-      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609986767/ShopifyImageRepo/t6rmgnot9prowkqirky2.jpg',
+      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609999377/ShopifyImageRepo/lojcrkibjg9mrq7smpmr.jpg',
     uploaded_on: '2021-01-07T02:32:54.113Z',
     user_id: '1',
     visibility: 'public',
@@ -21,9 +21,9 @@ module.exports = [
 
   {
     name: 'Image 3',
-    public_id: 'ShopifyImageRepo/ikimnjgk8674agirbu23',
+    public_id: 'ShopifyImageRepo/ejrave1morhuenlwases',
     secure_url:
-      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609986758/ShopifyImageRepo/ikimnjgk8674agirbu23.jpg',
+      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609999367/ShopifyImageRepo/ejrave1morhuenlwases.jpg',
     uploaded_on: '2021-01-07T02:32:54.114Z',
     user_id: '1',
     visibility: 'public',
@@ -31,9 +31,9 @@ module.exports = [
 
   {
     name: 'Image 4',
-    public_id: 'ShopifyImageRepo/idblk5f4qc3xvdsbracg',
+    public_id: 'ShopifyImageRepo/jk0wyt0nlzannclvvqrc',
     secure_url:
-      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609986773/ShopifyImageRepo/idblk5f4qc3xvdsbracg.jpg',
+      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609999380/ShopifyImageRepo/jk0wyt0nlzannclvvqrc.jpg',
     uploaded_on: '2021-01-07T02:32:54.115Z',
     user_id: '1',
     visibility: 'public',
@@ -41,18 +41,18 @@ module.exports = [
 
   {
     name: 'Image 5',
-    public_id: 'ShopifyImageRepo/uo5ekvsp6azsyupuqeoz',
+    public_id: 'ShopifyImageRepo/zi9hpoisulgupzrynthe',
     secure_url:
-      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609986761/ShopifyImageRepo/uo5ekvsp6azsyupuqeoz.jpg',
+      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609999377/ShopifyImageRepo/zi9hpoisulgupzrynthe.jpg',
     uploaded_on: '2021-01-07T02:32:54.115Z',
     user_id: '1',
     visibility: 'public',
   },
   {
     name: 'Image 6',
-    public_id: 'ShopifyImageRepo/jevjsvtomtwhrotexlnj',
+    public_id: 'ShopifyImageRepo/rmi0gsmnfcjaggidp8fy',
     secure_url:
-      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609987418/ShopifyImageRepo/jevjsvtomtwhrotexlnj.jpg',
+      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609999655/ShopifyImageRepo/rmi0gsmnfcjaggidp8fy.jpg',
     uploaded_on: '2021-01-07T02:43:45.290Z',
     user_id: '1',
     visibility: 'public',
@@ -60,9 +60,9 @@ module.exports = [
   ,
   {
     name: 'Image 7',
-    public_id: 'ShopifyImageRepo/rocxy4dhr49saithmqgf',
+    public_id: 'ShopifyImageRepo/kevfcetxazlch7krpiom',
     secure_url:
-      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609987424/ShopifyImageRepo/rocxy4dhr49saithmqgf.jpg',
+      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609999647/ShopifyImageRepo/kevfcetxazlch7krpiom.jpg',
     uploaded_on: '2021-01-07T02:43:45.292Z',
     user_id: '1',
     visibility: 'public',
@@ -70,9 +70,9 @@ module.exports = [
 
   {
     name: 'Image 8',
-    public_id: 'ShopifyImageRepo/xxhujwkwni8hxf7lw49e',
+    public_id: 'ShopifyImageRepo/dt1aeuzutaxojkeka4wa',
     secure_url:
-      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609987409/ShopifyImageRepo/xxhujwkwni8hxf7lw49e.jpg',
+      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609999729/ShopifyImageRepo/dt1aeuzutaxojkeka4wa.jpg',
     uploaded_on: '2021-01-07T02:43:45.293Z',
     user_id: '1',
     visibility: 'public',
@@ -80,19 +80,9 @@ module.exports = [
 
   {
     name: 'Image 9',
-    public_id: 'ShopifyImageRepo/wgspgu3xh3ibywwg2cki',
+    public_id: 'ShopifyImageRepo/gehjt2x3fft2xxrtaftl',
     secure_url:
-      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609987422/ShopifyImageRepo/wgspgu3xh3ibywwg2cki.jpg',
-    uploaded_on: '2021-01-07T02:43:45.294Z',
-    user_id: '1',
-    visibility: 'private',
-  },
-
-  {
-    name: 'Image 10',
-    public_id: 'ShopifyImageRepo/z2gy7xeiw7sogmo6iutq',
-    secure_url:
-      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609987407/ShopifyImageRepo/z2gy7xeiw7sogmo6iutq.jpg',
+      'https://res.cloudinary.com/shopifyimagerepository/image/upload/v1609999724/ShopifyImageRepo/gehjt2x3fft2xxrtaftl.jpg',
     uploaded_on: '2021-01-07T02:43:45.294Z',
     user_id: '1',
     visibility: 'private',
