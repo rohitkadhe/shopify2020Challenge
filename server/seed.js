@@ -1,10 +1,13 @@
+let User = require('./models/User');
+let imageTableSeedDat = require('./seedData/imagesTable');
+let Image = require('./models/Image');
+let AuthService = require('./services/AuthService');
 var conn = {
   host: '127.0.0.1',
   user: 'postgres',
   password: 'root',
   charset: 'utf8',
 };
-
 // connect without database selected
 var knex = require('knex')({ client: 'pg', connection: conn });
 
@@ -32,6 +35,31 @@ knex.raw('CREATE DATABASE shopifyimagerepository').then(function () {
       table.timestamp('uploaded_on').defaultTo(knex.fn.now());
     })
     .then(function () {
-      knex.destroy();
+      AuthService.hashPassword('seed')
+        .then(function (res) {
+          let user = new User('seed@gmail.com', 'Seed User', res);
+          knex('users')
+            .insert(user)
+            .then(function () {
+              return;
+            });
+          return;
+        })
+        .then(() =>
+          Promise.all(
+            imageTableSeedDat.map((image) => {
+              let img = new Image(
+                image.name,
+                image.public_id,
+                image.user_id,
+                image.secure_url,
+                image.visibility,
+              );
+              let res = knex('images').insert(img);
+
+              return res;
+            }),
+          ).then(() => knex.destroy()),
+        );
     });
 });
