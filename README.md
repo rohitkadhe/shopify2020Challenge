@@ -39,7 +39,7 @@
 - <b>Important Note: </b> Make the changes in the previous two steps carefully or the project will not run
 - Finally open a terminal window in the server directory and first run the command 'npm i' then 'node seed.js' and finally 'npm run dev'
 
-- Thats it! The server and client should both be running. There is a seed user that has been created with email: 'seed@gmail.com' and password: 'seed'
+- Thats it! The server and client should both be running. There are a few seed images and also a seed user with email: 'seed@gmail.com' and password: 'seed' 
 
 # Limitations and Improvements
 
