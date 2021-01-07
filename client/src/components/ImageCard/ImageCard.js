@@ -6,13 +6,14 @@ export default function ImageCard({
   visibility,
   secure_url,
   uploaded_on,
-  deleteImage,
+  onClick,
   color,
+  link,
 }) {
   const visibilityClass = visibility.toLowerCase() === 'private' ? 'lock' : 'lock open';
-
+  const linkToImage = link ? secure_url : '';
   return (
-    <Card onClick={deleteImage} color={color}>
+    <Card onClick={onClick} color={color} link={link} href={linkToImage}>
       <Image src={secure_url} wrapped ui={false} />
       <Card.Content>
         <Card.Header>{name}</Card.Header>

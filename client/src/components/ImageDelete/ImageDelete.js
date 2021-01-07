@@ -51,7 +51,8 @@ export default class ImageDelete extends Component {
                   secure_url={image.secure_url}
                   uploaded_on={date.toDateString()}
                   key={image.public_id}
-                  deleteImage={async () => await this.handleImageDelete(image.public_id)}
+                  onClick={async () => await this.handleImageDelete(image.public_id)}
+                  link={false}
                   color={'red'}
                 />
               </Grid.Column>

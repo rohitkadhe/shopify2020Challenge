@@ -12,7 +12,8 @@ export default class ImageRepository extends Component {
       images: [],
     };
   }
-  renderImages() {
+
+  renderImages = () => {
     const { fetching } = this.state;
     if (fetching) {
       return <ImageRepoLoader visible={fetching} />;
@@ -31,6 +32,7 @@ export default class ImageRepository extends Component {
                   secure_url={image.secure_url}
                   uploaded_on={date.toDateString()}
                   key={image.public_id}
+                  link={true}
                 />
               </Grid.Column>
             );
@@ -38,7 +40,7 @@ export default class ImageRepository extends Component {
         </Grid.Row>
       </Grid>
     );
-  }
+  };
 
   async componentDidMount() {
     let images = [];
