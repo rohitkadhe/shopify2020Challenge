@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import {
   homeRoute,
   loginRoute,
@@ -51,6 +51,7 @@ export default function Routes() {
         path={registerRoute}
         component={(props) => <AuthForm {...props} type="Register" />}
       />
+      <Route path="*" component={() => <Redirect to={homeRoute} />} />
     </Switch>
   );
 }

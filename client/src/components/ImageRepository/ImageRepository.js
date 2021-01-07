@@ -13,6 +13,10 @@ export default class ImageRepository extends Component {
     };
   }
   renderImages() {
+    const { fetching } = this.state;
+    if (fetching) {
+      return <ImageRepoLoader visible={fetching} />;
+    }
     return (
       <Grid stackable>
         <Grid.Row columns={6}>
@@ -37,31 +41,26 @@ export default class ImageRepository extends Component {
   }
 
   async componentDidMount() {
-    this.setState({ fetching: true });
     let images = [];
     switch (this.props.fetchType) {
       case 'publicImages':
+        this.setState({ fetching: true });
         images = await ImageRepositoryService.getPublicImages();
         this.setState({ images, fetching: false });
         break;
       case 'userImages':
+        this.setState({ fetching: true });
         images = await ImageRepositoryService.getUserImages();
         this.setState({ images, fetching: false });
         break;
       default:
+        this.setState({ fetching: true });
         images = await ImageRepositoryService.getPublicImages();
         this.setState({ images, fetching: false });
         break;
     }
   }
   render() {
-    const { fetching } = this.state;
-
-    return (
-      <div style={{ margin: '1em' }}>
-        {this.renderImages()}
-        <ImageRepoLoader visible={fetching} />
-      </div>
-    );
+    return <div style={{ margin: '1em' }}>{this.renderImages()}</div>;
   }
 }

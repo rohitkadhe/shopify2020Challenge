@@ -12,7 +12,6 @@ export default function ImageRepoLoader({ visible }) {
         height={100}
         width={100}
         visible={visible}
-        secondaryColor="grey"
       />
     </Grid>
   );
