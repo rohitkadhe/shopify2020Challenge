@@ -5,12 +5,12 @@
 
 # Project Overview
 
-- The server application is built using node.js and PostgreSQL was used to setup the relational database. A ORM library (knex.js) is used to make calls from the API
+- The server application is built using node.js and PostgreSQL was used to setup the relational database. An ORM library (knex.js) is used to make calls from the API
   to the database.
-- Authentication is built from the ground up using the jwt and bycrypt libraries
+- Authentication is built from the ground up using the jwt token library and the bycrypt library
 - Images are securely uploaded to the Cloudinary platform and also securly deleted using the Cloudinary API
 
-- The client application was build using React.js and the react-semantic-ui library was used for styling components
+- The client application was build using React.js and the Semantic-UI-React library was used for styling components
 
 # Completed Requirements
 
