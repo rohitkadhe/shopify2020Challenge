@@ -21,7 +21,8 @@ export default function ImageUpload() {
       formData.append(index, JSON.stringify(imageDat));
     });
 
-    await ImageRepositoryService.uploadImages(formData);
+    let res = await ImageRepositoryService.uploadImages(formData);
+    console.log(res.data);
     setUploading(false);
   }
 
