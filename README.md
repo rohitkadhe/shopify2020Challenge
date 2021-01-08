@@ -43,5 +43,5 @@
 
 # Limitations and Improvements
 
-- Due to time constraints not all required functionality was implemented which includes selling/buying images error handling, input validation.
+- Due to time constraints not all required functionality was implemented which includes selling/buying images, error handling and input validation
 - However due to the way the project is designed this functionallity can be easily implemented
