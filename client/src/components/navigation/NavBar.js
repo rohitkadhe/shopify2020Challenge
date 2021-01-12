@@ -9,7 +9,7 @@ import {
 } from '../../constants/strings';
 
 export default function NavBar({ history }) {
-  const [activeItem, setActiveItem] = useState('All Images');
+  const [activeItem, setActiveItem] = useState('');
 
   let isAuthenticated = AuthService.isAuthenticated();
   let authString = isAuthenticated ? 'Logout' : 'Login';

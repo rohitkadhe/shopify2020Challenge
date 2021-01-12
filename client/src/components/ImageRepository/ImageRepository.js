@@ -14,16 +14,11 @@ export default class ImageRepository extends Component {
   }
 
   renderImages = () => {
-    const { fetching } = this.state;
-    if (fetching) {
-      return <ImageRepoLoader visible={fetching} />;
-    }
     return (
       <Grid stackable>
         <Grid.Row columns={6}>
           {this.state.images.map((image) => {
             let date = new Date(image.uploaded_on);
-
             return (
               <Grid.Column key={image.public_id} style={{ marginBottom: '1em' }}>
                 <ImageCard
@@ -31,8 +26,7 @@ export default class ImageRepository extends Component {
                   visibility={image.visibility}
                   secure_url={image.secure_url}
                   uploaded_on={date.toDateString()}
-                  key={image.public_id}
-                  link={true}
+                  onClick={() => (window.location.href = image.secure_url)}
                 />
               </Grid.Column>
             );
@@ -63,6 +57,11 @@ export default class ImageRepository extends Component {
     }
   }
   render() {
-    return <div style={{ margin: '1em' }}>{this.renderImages()}</div>;
+    const { fetching } = this.state;
+    return (
+      <div style={{ margin: '1em' }}>
+        {fetching ? <ImageRepoLoader visible={fetching} /> : this.renderImages()}
+      </div>
+    );
   }
 }

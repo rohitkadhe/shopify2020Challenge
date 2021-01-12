@@ -1,19 +1,10 @@
 import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react';
 
-export default function ImageCard({
-  name,
-  visibility,
-  secure_url,
-  uploaded_on,
-  onClick,
-  color,
-  link,
-}) {
+export default function ImageCard({ name, visibility, secure_url, uploaded_on, onClick, color }) {
   const visibilityClass = visibility.toLowerCase() === 'private' ? 'lock' : 'lock open';
-  const linkToImage = link ? secure_url : '';
   return (
-    <Card onClick={onClick} color={color} link={link} href={linkToImage}>
+    <Card onClick={onClick} color={color} link={true}>
       <Image src={secure_url} wrapped ui={false} />
       <Card.Content>
         <Card.Header>{name}</Card.Header>
